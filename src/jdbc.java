@@ -3,7 +3,7 @@ import java.sql.*;
 public class jdbc{
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
+//bu proje iicn mysql connector jar i indirip  projeye ekledik 
 String url="jdbc:mysql://localhost:3306/jdbc";
 String uname="root";
 String pass="root";
