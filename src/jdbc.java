@@ -7,17 +7,21 @@ public class jdbc{
 String url="jdbc:mysql://localhost:3306/jdbc";
 String uname="root";
 String pass="root";
+int iduser=5;
+String usern="serpil";
 
-String query="select * from users where userAge=38";
-        Class.forName("com.mysql.jdbc.Driver");
+
+
+String query="insert into users(idusers,username) values("+iduser+" ,'"+usern+"')";
+
+Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection con=DriverManager.getConnection(url,uname,pass);
         Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery(query);
-        rs.next();
-        String age=rs.getString(3);
-        System.out.println(age);
+        int count =st.executeUpdate(query);
+System.out.println(count+" .data added");
+
         st.close();
-        rs.close();
+        con.close();
     }
 }
